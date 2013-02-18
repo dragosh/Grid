@@ -1,0 +1,689 @@
+@import "../../Grid/grid.trapp.less";
+@import "../../Anchor/anchor.trapp.less";
+
+.grid-conf-fix ( 60px, 20px, 12 );
+
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			Colors
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+/* Header */
+@red_gh: 				#F35856;
+@grey_rt: 				#ECEDE9;
+
+@purple_ju: 			#E9DAE0;
+@purple_gr: 			#663D4E;
+
+@color_grid_column: 	#92C348;
+@color_grid_gutter: 	#DBEBBC;
+
+@color_footer_bg: 		#57BBBB;
+
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			Main
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+@font-face {
+	font-family: BonvenoCF;
+	src: url('BonvenoCF-Light.otf');
+}
+
+* {
+
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 6.25%;
+	-ms-text-size-adjust: 6.25%;
+	font-size: 6.25%;
+}
+
+body {
+	font-size: 14rem;
+	font-family:BonvenoCF;
+	background: url(../img/bg.png);
+}
+
+
+
+/* ::::::: Header
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+header {
+	text-align: center;
+	height: 200px;
+	color: @grey_rt;
+	background: url(../img/bg.png), @red_gh;
+
+	h1 {
+		font-size: 38rem;
+	}
+
+	h2 {
+		font-size: 120rem;
+		position: relative;
+		top: -30px;
+	}
+	span {
+	    color: #FFB8B8;
+	    font-size: 18rem;
+	    position: relative;
+	    top: -65px;
+	}
+}
+
+#wrap {
+	.grid-conf-fix ( 70px, 10px, 12 );
+}
+
+
+
+/* ::::::: Menu
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+nav {
+	.grid-conf-fluid ( 100%, 2, 8 );
+	background-color: @red_gh - 10;
+	height: 30px;
+	ul {
+	.col ( 8, 8 );
+	list-style: none;
+		li {
+			.col ( 1, 8, 2 );
+			text-align: center;
+			height: 30px;
+			a {
+						// @color, @hover, @visited, @active, @text-deco
+				.anchor ( #E4E4E4, #FFFFFF, #E4E4E4, #E4E4E4, false );
+				display: block;
+				height: 30px;
+				margin-top: 3px;
+				font-size: 16rem;
+				transition: all 0.7s;
+				&:hover {
+					background-color: @red_gh - 30;
+
+					-moz-box-shadow: inset 0px 0px 10px @red_gh - 70 ;
+					-webkit-box-shadow: inset 0px 0px 10px @red_gh - 70 ;
+					box-shadow: inset 0px 0px 10px @red_gh - 70 ;
+				}
+			}
+		}
+	}
+}
+
+
+
+/* ::::::: Bordergrid
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.bordergrid {
+	.grid-conf-fluid ( 100%, 2, 24 );
+	.col ( 24, 24 );
+	background-color: @purple_ju;
+
+	div	{
+		.col ( 1, 24 );
+		height: 4px;
+		background: url(../img/bg.png), @purple_gr;
+	}
+}
+
+
+
+/* ::::::: Conteiner Info
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.container_info {
+	// .grid-conf-fluid ( 960px, 2, 12 );
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, a );
+	padding-top: 20px;
+	text-align: center;
+	div:first-of-type {
+		.col ( 6, f );
+		font-size: 28rem;
+		padding-top: 20px;
+	}
+	ul {
+		.col ( 6, l );
+		list-style: none;
+		font-size: 16rem;
+
+		// .col-pull ( 1 );
+		// text-align: left;
+	}
+	// div:last-of-type {
+	// 	.col ( 4 );
+	// 	font-size: 32rem;
+	// 	padding-top: 30px;
+	// }
+}
+
+
+
+/* ::::::: Grid 1
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.grid_1 {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
+	background-color: @color_grid_gutter;
+	margin-top: 40px;
+	font-size: 16rem;
+	@timet: 0.3s;
+	transition: all @timet;
+	h2 {
+		.col (12 , 1);
+		text-align: center;
+		background-color: white;
+		span {
+			color: #aaa;
+		}
+		#content_grid:after  {
+			content: "Grid 960x";
+			color: @red_gh;
+		}
+	}
+	div {
+		.col ( 1, 12 );
+		background-color: @color_grid_column;
+		height: 50px;
+	}
+	@media all and (max-width: 950px)  {
+		.col ( 6, auto );
+		font-size: 13rem;
+		h2 {
+			.col ( 6 , 1 );
+			#content_grid:after  {
+				content: "Grid 480x";
+				color: @red_gh;
+			}
+		}
+		div {
+			.col ( 1, 6 );
+			&:nth-child(n+8) {
+				display: none;
+			}
+		}
+	}
+	@media all and (max-width: 470px)  {
+		.col ( 3, auto );
+		font-size: 8rem;
+		h2 {
+			.col ( 3 , 1 );
+			#content_grid:after  {
+				content: "Grid 240x";
+				color: @red_gh;
+			}
+		}
+		div {
+			.col ( 1, 3 );
+			&:nth-child(n+5) {
+				display: none;
+			}
+		}
+
+	}
+}
+
+
+
+/* ::::::: Grid 1
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.grid_2 {
+	.grid-conf-fix ( 50px, 10px, 16 );
+	.col ( 16, auto );
+	background-color: @color_grid_gutter;
+	margin-top: 40px;
+
+	h2 {
+		.col (16 , 1);
+		text-align: center;
+		background-color: white;
+	}
+
+	div {
+		.col ( 1, 16 );
+		background-color: @color_grid_column;
+		height: 50px;
+	}
+}
+	@media all and (max-width: 940px)  {
+		.container_grid_2 {
+			.grid-conf-fix ( 50px, 10px, 8 );
+			.col ( 8, auto );
+			h2 {
+				.col ( 8 , 1 );
+			}
+			div {
+				.col ( 1, 8 );
+			}
+		}
+	}
+		@media all and (max-width: 470px)  {
+			.container_grid_2 {
+				.grid-conf-fix ( 50px, 10px, 4 );
+				.col ( 4, auto );
+				h2 {
+					.col ( 4 , 1 );
+				}
+				div {
+					.col ( 1, 4 );
+				}
+			}
+		}
+
+
+
+/* ::::::: Container Code
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.container_code {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
+	.codesplit {
+		.col ( 6, 2 );
+	}
+	@media all and (max-width: 940px)  {
+	font-size: 12rem !important;
+	.grid-conf-fix ( 60px, 20px, 6 );
+	.col ( 6, auto );
+	.codesplit {
+		.col ( 6, 1 );
+		}
+	}
+	@media all and (max-width: 470px)  {
+	font-size: 9rem !important;
+	.grid-conf-fix ( 60px, 20px, 3 );
+	.col ( 3, auto );
+	.codesplit {
+		.col ( 3, 1 );
+		}
+	}
+}
+
+
+
+/* ::::::: Footer
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+footer {
+	background: url(../img/bg.png), @color_footer_bg;
+	color: @grey_rt;
+	height: 200px;
+	margin-top: 100px;
+	text-align: center;
+
+	h1 {
+		font-size: 38rem;
+	}
+
+	h2 {
+		font-size: 120rem;
+		position: relative;
+		top: -30px;
+
+	}
+
+}
+
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			Grids.html
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.grids_a {
+	margin-top: 40px;
+	font-size: 14rem;
+	@timet: 0.3s;
+	transition: all @timet;
+	margin-left: auto;
+	margin-right: auto;
+
+	h3 {
+		font-size: 22rem;
+		margin-top: 30px;
+	}
+	.grid_info {
+		background-color: white;
+		height: 64px;
+		margin-top: 20px;
+		-moz-box-shadow: inset 0px 0px 10px #C9C9C9 ;
+		-webkit-box-shadow: inset 0px 0px 10px #C9C9C9 ;
+		box-shadow: inset 0px 0px 10px #C9C9C9 ;
+
+		h2 {
+			margin-top: 15px;
+			span {
+				font-size: 14rem;
+				color: #999C8B;
+			}
+		}
+		pre {
+			code {
+				margin-left: 5%;
+    			width: 90%;
+			}
+		}
+	}
+	.grids_s {
+		background-color: @color_grid_gutter;
+		div {
+		background-color: @color_grid_column;
+		height: 50px;
+		// margin-bottom: 20
+		}
+	}
+
+}
+
+
+
+/* ::::::: Grids 960
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.grids_960 {
+	.grid-conf-fix ( 60px, 20px, 12 );
+
+	.col ( 12, auto );
+	.grid_info {
+		.col ( 12, 12 );
+		h2 {
+			.col ( 5, 12, 1 );
+		}
+		pre {
+			.col ( 6, l );
+		}
+	}
+	/**
+	*	8 Columns
+	*/
+	.grid-960-8-1 {
+		.grid-conf-fix ( 110px, 10px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	.grid-960-8-2 {
+		.grid-conf-fix ( 100px, 20px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	.grid-960-8-3 {
+		.grid-conf-fix ( 90px, 30px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	/**
+	*	12 Columns
+	*/
+	.grid-960-12-1 {
+		.grid-conf-fix ( 70px, 10px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	.grid-960-12-2 {
+		.grid-conf-fix ( 60px, 20px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	.grid-960-12-3 {
+		.grid-conf-fix ( 50px, 30px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	/**
+	*	16 Columns
+	*/
+	.grid-960-16-1 {
+		.grid-conf-fix ( 50px, 10px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	.grid-960-16-2 {
+		.grid-conf-fix ( 40px, 20px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	.grid-960-16-3 {
+		.grid-conf-fix ( 30px, 30px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	/**
+	*	24 Columns
+	*/
+	.grid-960-24-1 {
+		.grid-conf-fix ( 30px, 10px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+	.grid-960-24-2 {
+		.grid-conf-fix ( 20px, 20px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+	.grid-960-24-3 {
+		.grid-conf-fix ( 10px, 30px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+}
+
+
+
+/* ::::::: Grids 1200
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.grids_1200 {
+	.grid-conf-fix ( 80px, 20px, 12 );
+
+	.col ( 12, auto );
+	.grid_info {
+		.col ( 12, 12 );
+		h2 {
+			.col ( 5, 12, 1 );
+		}
+		pre {
+			.col ( 6, l );
+		}
+	}
+	/**
+	*	8 Columns
+	*/
+	.grid-1200-8-1 {
+		.grid-conf-fix ( 140px, 10px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	.grid-1200-8-2 {
+		.grid-conf-fix ( 130px, 20px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	.grid-1200-8-3 {
+		.grid-conf-fix ( 120px, 30px, 8 );
+		.col ( 8, 8 );
+		div {
+			.col ( 1, 8 );
+		}
+	}
+	/**
+	*	12 Columns
+	*/
+	.grid-1200-12-1 {
+		.grid-conf-fix ( 90px, 10px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	.grid-1200-12-2 {
+		.grid-conf-fix ( 80px, 20px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	.grid-1200-12-3 {
+		.grid-conf-fix ( 70px, 30px, 12 );
+		.col ( 12, 12 );
+		div {
+			.col ( 1, 12 );
+		}
+	}
+	/**
+	*	16 Columns
+	*/
+	.grid-1200-16-1 {
+		.grid-conf-fix ( 65px, 10px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	.grid-1200-16-2 {
+		.grid-conf-fix ( 55px, 20px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	.grid-1200-16-3 {
+		.grid-conf-fix ( 45px, 30px, 16 );
+		.col ( 16, 16 );
+		div {
+			.col ( 1, 16 );
+		}
+	}
+	/**
+	*	24 Columns
+	*/
+	.grid-1200-24-1 {
+		.grid-conf-fix ( 40px, 10px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+	.grid-1200-24-2 {
+		.grid-conf-fix ( 30px, 20px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+	.grid-1200-24-3 {
+		.grid-conf-fix ( 20px, 30px, 24 );
+		.col ( 24, 24 );
+		div {
+			.col ( 1, 24 );
+		}
+	}
+}
+
+
+
+/* ::::::: At this point
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+.this_point {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
+	text-align: center;
+	margin-top: 50px;
+	p:first-of-type {
+		font-size: 42rem;
+	}
+	p:nth-of-type ( 2 ) {
+		font-size: 36rem;
+	}
+	p:nth-of-type ( 3 ) {
+		font-size: 18rem;
+		margin-top: 50px;
+	}
+	pre {
+		.col ( 5, auto );
+		text-align: left;
+	}
+
+}
+
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			Beta Banner
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+#corner-banner {
+	background: #333; /* old browsers */
+	background: -moz-linear-gradient(top, #333 0%, #000 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333), color-stop(100%,#000)); /* webkit */
+	color: white;
+	display: block;
+	font-size:18rem;
+	left: -50px;
+	line-height:13px;
+	padding:3px 3px 4px 3px;
+	position: absolute;
+	text-align:center;
+	text-shadow: #000 1px 1px 0;
+	top: 60px;
+	width: 250px;
+
+	-moz-transform: rotate(-45deg);  /* FF3.5+ */
+	-o-transform: rotate(-45deg);  /* Opera 10.5 */
+	-webkit-transform: rotate(-45deg);  /* Saf3.1+, Chrome */
+	transform: rotate(-45deg);  /* CSS3 (for when it gets supported) */
+
+
+	box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+	-moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+	-webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+	-o-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
+	div {
+		font-size: 10rem;
+	}
+}
+
+/* 12:12 Ahora, hijo mío, a más de esto, sé amonestado. No hay fin de hacer muchos libros; y el mucho estudio es fatiga de la carne.  */
