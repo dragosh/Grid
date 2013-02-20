@@ -57,148 +57,75 @@
 
 <!-- ::::::: Info
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+
 		<div class="container_info">
-			<ul>
-				<li> Simple </li>
-				<li> Semantic  </li>
-				<li> Nested Column </li>
-				<li> Easy Responsive </li>
-				<li> Multiples Grids in one page </li>
-				<li> Perfect for CMS and Themes </li>
-			</ul>
+			<div>
+				<p> Mixins  </p>
+			</div>
 		</div>
 
 
 
-<!-- ::::::: Grid 1
+<!-- ::::::: Basic
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
+<div class="mixin">
 
-		<div class="grid_1">
-			<h2> <span id="content_grid"></span>  - 12 <span>Columns:</span>60px -  <span>Gutter:</span>20px </h2>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div> <!-- END container_grid -->
-
-		<div class="container_code">
-			<div class="codesplit">
-		<pre><code>
-&lt;div&gt; class="grid_1"&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-&lt;/div&gt;
-		</code></pre>
-			</div>
-
-			<div class="codesplit">
-	<pre><code class="css">
-.grid_1 {
-	.grid-conf-fix ( 60px, 20px, 12 );
-	.col ( 12, auto);
-	div {
-		.col ( 1, 12 );
-	}
-	@media all and (max-width: 950px)  {
-		.col ( 6, auto );
-		div {
-			.col ( 1, 6 );
-		}
-	}
-	@media all and (max-width: 470px)  {
-		.col ( 3, auto );
-		div {
-			.col ( 1, 3 );
-		}
-	}
-}
-	</code></pre>
-			</div>
-		</div>
+	<p>Define Grid</p>
+<pre><code>.grid-conf-fix ( 60px, 20px, 6 );</code></pre>
 
 
-
-<!-- ::::::: Grid 2
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
-
-
-		<div class="grid_2">
-			<h2>Grid 960px  - 16 Columns - 10 Gutter </h2>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div> <!-- END container_grid -->
-		<div class="container_code">
-			<div class="codesplit">
-		<pre><code>
-&lt;div&gt; class="grid_2"&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-	&lt;div&gt; &lt;/div&gt;
-&lt;/div&gt;
-		</code></pre>
-			</div>
-
-			<div class="codesplit">
-	<pre><code >
-.grid_2 {
-	.grid-conf-fix ( 50px, 10px, 16 );
-	.col ( 16, auto);
-
-	.div {
-		.col ( 1, 16 );
-	}
-}
-	</code></pre>
-			</div>
-		</div>
+	<p>Conteiner</p>
+<pre><code>.col ( 6, auto );</code></pre>
+<div></div>
 
 
+	<p>Basics</p>
+<pre><code>.col ( 2, first );</code></pre>
+<div></div>
+<pre><code>.col ( 2, middle );</code></pre>
+<div></div>
+<pre><code>.col ( 2, last );</code></pre>
+<div></div>
+
+	<p>Other Containers</p>
+<pre><code>.col ( 6, 1 );</code></pre>
+<div></div>
+<pre><code>.col ( 6, wide );</code></pre>
+<div></div>
+<pre><code>.col ( 6 , 6 );</code></pre>
+<div></div>
+
+
+	<p>normal column</p>
+<pre><code>.col ( 2 );</code></pre>
+<div></div>
+
+	<p>Single Column</p>
+<pre><code>.col ( 2, single );</code></pre>
+<div></div>
+
+	<p>Gallery</p>
+<pre><code>.col ( 2, 2 );</code></pre>
+<div></div>
+
+	<p>Gallery with push</p>
+<pre><code>.col ( 2, 2, 3 );</code></pre>
+<div></div>
+
+	<p>Pull and Push</p>
+<pre><code>.col.push ( 2 );</code></pre>
+<div></div>
+<pre><code>.col.pull ( 3 );</code></pre>
+<div></div>
+
+
+	<p>magic columns</p>
+<pre><code>.col-s ( 6, 5 );</code></pre>
+<div></div>
+
+</div>
 
 <!-- ::::::: Footer
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
