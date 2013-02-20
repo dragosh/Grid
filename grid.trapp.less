@@ -158,6 +158,19 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
     }
   }
 
+  .col ( @columns_cant, @nth ) when ( @nth = s ),
+                                    ( @nth = single ) {
+    .func_width ( @columns_cant );
+    @margin_r:  @total_width - @width;
+    & {
+      position: relative;
+      float: left;
+      margin-left: 0;
+      margin-right: @margin_r;
+      width: @width;
+      .clearfix;
+    }
+  }
 
   .col ( @columns_cant, @nth ) when ( @nth = w ),
                                     ( @nth = wide ) {
