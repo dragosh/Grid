@@ -6,7 +6,7 @@
 * @copyright:   2013 by the author
 * @license:     This work is licensed under a Creative Commons Attribution 3.0 Unported License.
 * @file:        grid.trapp.less
-* @version:     beta 1.0
+* @version:     v 1.2
 * @see:         https://github.com/Mayccoll/Less-Trapp
 * @date:        7-Feb-2013
 *
@@ -145,6 +145,22 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
   }
 
 
+  .col ( @columns_cant, @nth, @push ) when ( @nth = l ),
+                                     ( @nth = last )
+                                    and ( @push > 0 ) {
+    .func_width ( @columns_cant );
+    @magin_r:  @total_width * (((( @column_width + @gutter_width ) * @push ) - @gutter_width) / @total_width );
+    & {
+      position: relative;
+      float: left;
+      margin-left: @margin;
+      margin-right: @magin_r;
+      width: @width;
+      .clearfix;
+    }
+  }
+
+
   .col ( @columns_cant, @nth ) when ( @nth = m ),
                                     ( @nth = middle ) {
     .func_width ( @columns_cant );
@@ -157,6 +173,7 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
       .clearfix;
     }
   }
+
 
   .col ( @columns_cant, @nth ) when ( @nth = s ),
                                     ( @nth = single ) {
@@ -171,6 +188,7 @@ http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
       .clearfix;
     }
   }
+
 
   .col ( @columns_cant, @nth ) when ( @nth = w ),
                                     ( @nth = wide ) {
