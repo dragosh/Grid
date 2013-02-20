@@ -795,6 +795,104 @@ footer {
 }
 
 
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			Demo 2
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.demo02 {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
+
+	header {
+		.col ( 12, 1 );
+	}
+	section:nth-of-type ( 1 ) {
+		.col ( 8, first );
+			div {
+				.col ( 8, 1 );
+			}
+			div:nth-of-type ( 2 ) {
+				.col ( 4, first );
+			}
+			div:nth-of-type ( 3 ) {
+				.col ( 4, last );
+			}
+	}
+	section:nth-of-type ( 2 ) {
+		.col ( 4, last );
+	}
+	div:nth-of-type(1) {
+		.col ( 4, first );
+	}
+	div:nth-of-type(2) {
+		.col ( 8, last );
+	}
+	footer {
+		.col ( 12, 1 );
+	}
+}
+
+.demo02 {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
+	background-color: @color_grid_gutter;
+
+	header {
+		.col ( 12, 1 );
+		background-color: @color_grid_column;
+		height: 100px;
+		margin-bottom: 40px;
+	}
+	section:nth-of-type ( 1 ) {
+		.col ( 8, f );
+			background-color: @color_grid_column - 20;
+			height: 300px;
+
+			div {
+				.col ( 8,1 );
+				background-color: @color_grid_column - 40;
+				height: 100px;
+				margin-top: 0;
+			}
+			div:nth-of-type ( 2 ) {
+				.col ( 4,f );
+				background-color: @color_grid_column - 60;
+				height: 100px;
+				margin-top: 0;
+			}
+			div:nth-of-type ( 3 ) {
+				.col ( 4,l );
+				background-color: @color_grid_column - 60;
+				height: 100px;
+				margin-top: 0;
+			}
+	}
+	section:nth-of-type ( 2 ) {
+		.col ( 4, l );
+		background-color: @color_grid_column - 20;
+		height: 300px;
+	}
+	div:nth-of-type(1) {
+		.col ( 4, f );
+		background-color: @color_grid_column;
+		height: 100px;
+		margin-top: 40px;
+	}
+	div:nth-of-type(2) {
+		.col ( 8, l );
+		background-color: @color_grid_column;
+		height: 100px;
+		margin-top: 40px;
+	}
+	footer {
+		.col ( 12, 1 );
+		background-color: @color_grid_column;
+		height: 100px;
+		margin-top: 40px;
+	}
+}
+
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
 			Mixin
@@ -927,39 +1025,12 @@ footer {
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
-			Beta Banner
+			Banner
 \* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 
-#corner-banner {
-	background: #333; /* old browsers */
-	background: -moz-linear-gradient(top, #333 0%, #000 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333), color-stop(100%,#000)); /* webkit */
-	color: white;
-	display: block;
-	font-size:18rem;
-	left: -50px;
-	line-height:13px;
-	padding:3px 3px 4px 3px;
-	position: absolute;
-	text-align:center;
-	text-shadow: #000 1px 1px 0;
-	top: 60px;
-	width: 250px;
 
-	-moz-transform: rotate(-45deg);  /* FF3.5+ */
-	-o-transform: rotate(-45deg);  /* Opera 10.5 */
-	-webkit-transform: rotate(-45deg);  /* Saf3.1+, Chrome */
-	transform: rotate(-45deg);  /* CSS3 (for when it gets supported) */
-
-
-	box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
-	-moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
-	-webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
-	-o-box-shadow: rgba(0,0,0, 0.2) 0px 0px 6px;
-	div {
-		font-size: 10rem;
-	}
-}
-
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *\
+			END
+\* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* 12:12 Ahora, hijo mío, a más de esto, sé amonestado. No hay fin de hacer muchos libros; y el mucho estudio es fatiga de la carne.  */

@@ -7,7 +7,7 @@
 
 	<link rel="shortcut icon" href="favicon.ico" />
 
-	<title>Grid Less Trap</title>
+	<title>Demo 1 | Grid Less Trap</title>
 
 	<link rel="stylesheet" href="js/highlight.js/styles/tomorrow.css">
 
@@ -55,112 +55,115 @@
 			<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
 		</div>
 
+
+
 <!-- ::::::: Info
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 
 		<div class="container_info">
 			<div>
-				<p> Nested columns </p>
-				<p> Fixed </p>
+				<p> Demo 2  </p>
 			</div>
 		</div>
 
 
 
-<!-- ::::::: Nested
+<!-- ::::::: Demo 2
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
+<div class="demo02">
+	<header>
+	</header>
 
-		<div class="nested_fix">
-			<div>
-				<div>
-					<div> Lorem ipsum dolor </div>
-					<div> accusamus incidunt </div>
-					incidunt
-				</div>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
 
-				<div>
-					<div> dolor </div>
-					<div> consectetur </div>
-					exercitationem
-				</div>
-				Quidem quam placeat cupiditate omnis nam temporibus
-			</div>
+	<section>
+	</section>
 
-			<div>
+	<section>
+	</section>
 
-				<div>
-					<div> elit </div>
-					<div> repellat </div>
-					officia
-				</div>
+	<div></div>
 
-				<div>
-					<div> pariatur </div>
-					<div> accusamus </div>
-					voluptatibus
-				</div>
-				Quidem quam placeat cupiditate omnis nam temporibus
-			</div>
-			Illum a officiis impedit incidunt nemo earum at exercitationem consectetur hic maiores. Culpa officia consequatur exercitationem maiores fugiat.
-		</div>
+	<div></div>
+
+	<footer>
+	</footer>
+</div>
 
 		<div class="container_code">
 			<div class="codesplit">
 		<pre><code>
-&lt;div class="nested"&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;div&gt; &lt;/div&gt;
-			&lt;div&gt; &lt;/div&gt;
-		&lt;/div&gt;
+&lt;div class="demo02"&gt;
+	&lt;header&gt;
+	&lt;/header&gt;
 
-		&lt;div&gt;
-			&lt;div&gt; &lt;/div&gt;
-			&lt;div&gt; &lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+	&lt;section&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;/div&gt;
+		&lt;div&gt;&lt;/div&gt;
+	&lt;/section&gt;
 
-	&lt;div&gt;
+	&lt;section&gt;
+	&lt;/section&gt;
 
-		&lt;div&gt;
-			&lt;div&gt; &lt;/div&gt;
-			&lt;div&gt; &lt;/div&gt;
-		&lt;/div&gt;
+	&lt;section&gt;
+	&lt;/section&gt;
 
-		&lt;div&gt;
-			&lt;div&gt; &lt;/div&gt;
-			&lt;div&gt; &lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+	&lt;div&gt;&lt;/div&gt;
+
+	&lt;div&gt;&lt;/div&gt;
+
+	&lt;footer&gt;
+	&lt;/footer&gt;
 &lt;/div&gt;
 		</code></pre>
 			</div>
 
 			<div class="codesplit">
-	<pre><code >
-.nested {
-	.grid-conf-fix ( 40px, 20px, 16 );
-	.col ( 16, auto );
+	<pre><code class="css">
+.demo02 {
+	.grid-conf-fix ( 60px, 20px, 12 );
+	.col ( 12, auto );
 
-	div {
-		.col ( 8, 2 );
-
-		div {
-			.col ( 4, 2 );
-
-			div{
-				.col ( 2, 2 );
+	header {
+		.col ( 12, 1 );
+	}
+	section:nth-of-type ( 1 ) {
+		.col ( 8, first );
+			div {
+				.col ( 8, 1 );
 			}
-		}
+			div:nth-of-type ( 2 ) {
+				.col ( 4, first );
+			}
+			div:nth-of-type ( 3 ) {
+				.col ( 4, last );
+			}
+	}
+	section:nth-of-type ( 2 ) {
+		.col ( 4, last );
+	}
+	div:nth-of-type(1) {
+		.col ( 4, first );
+	}
+	div:nth-of-type(2) {
+		.col ( 8, last );
+	}
+	footer {
+		.col ( 12, 1 );
 	}
 }
 	</code></pre>
 			</div>
 		</div>
-
-
 
 <!-- ::::::: Footer
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
